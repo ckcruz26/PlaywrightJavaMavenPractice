@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
@@ -82,8 +83,10 @@ public class DashboardTest {
 
     @Test
     void ePayrollDashboard002() {
+
+        Locator payrollManagementLink = page.locator("//*[@id=\"app\"]/div/div[3]/div[1]/div[3]/div/div[1]/div/div/p[2]");
         assertEquals(PayrollConfigurator.TEST_URL + "dashboard", page.url());
-        page.locator("//*[@id=\"app\"]/div/div[3]/div[1]/div[3]/div/div[1]/div/div/p[2]").click();
+        payrollManagementLink.click();
         assertEquals(PayrollConfigurator.TEST_URL + "payroll-management", page.url());
     }
 }

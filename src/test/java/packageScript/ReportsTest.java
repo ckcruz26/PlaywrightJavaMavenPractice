@@ -1,11 +1,12 @@
 package packageScript;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -16,6 +17,7 @@ import org.junit.jupiter.api.Test;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
@@ -74,4 +76,14 @@ public class ReportsTest {
         context.close();
     }
 
+    @Test
+    void ePayrollReports001() {
+        assertThat(page).hasURL(Pattern.compile(".*\\/reports.*"));
+    }
+
+    @Test
+    void ePayrollReports002() {
+        Locator reportsLink = page.locator("//*[@id=\"app\"]/div/div[2]/div/div[1]/ul/li[4]/ul/li/a");
+        reportsLink.click();
+    }
 }

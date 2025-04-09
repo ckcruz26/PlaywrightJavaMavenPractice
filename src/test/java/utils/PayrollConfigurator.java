@@ -15,4 +15,7 @@ public class PayrollConfigurator {
     // MESSAGES
     public static final String LOGIN_ERROR_INVALID_CREDENTIALS = "Incorrect username or password";
     public static final String LOGIN_ERROR_EMPTY_FIELD = "Username or password cannot be empty";
+
+    //SEARCH DATA FOR SEARCH FIELD OF SALARY GRADE
+    public static final String SEARCH_DATA_NAME_PAYROLL = "Plantilla";
 }
