@@ -140,7 +140,7 @@ public class ProfileTest {
     void erm_regressionProfileST006(){
         
         ProfilePage profilePage = new ProfilePage(page);
-        profilePage.otherInforamtionPartOne("Bulakan", "1", , "60", "A+", "1234-5678-9101", "21-1234567-", "123-456-789-012");
+        profilePage.otherInforamtionPartOne("Bulakan", "1",  ErmTestData.heightStr, ErmTestData.weightStr, ErmTestData.bloodType, ErmTestData.pagIbig, ErmTestData.philHealth, ErmTestData.tinID );
 
     }
 
